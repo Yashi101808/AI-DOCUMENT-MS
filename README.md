@@ -1,74 +1,109 @@
-# Document Management System
+# 📂 Document Management System (DMS)
 
-The **Document Management System** is a comprehensive application designed to handle document uploads, text extraction, translation, summarization, search, and more. It leverages FastAPI for backend services and integrates various utilities for efficient document processing.
-
----
-
-## Features
-- **Document Upload**: Upload and manage PDF and DOCX files.
-- **Text Extraction**: Extract text from uploaded documents using `pdfminer.six` and `python-docx`.
-- **Translation**: Translate extracted text into different languages using the Gemini API.
-- **Summarization**: Summarize document content with AI-powered APIs.
-- **Search**: Search documents by title, tags, or uploader.
-- **Transliteration**: Convert text into different scripts.
-- **Image Extraction**: Extract images from PDF and DOCX files.
-- **User Authentication**: Secure user registration, login, and OTP verification.
-- **Activity Logs**: Track user actions and maintain logs in the database.
-- **Comments**: Add comments to documents for collaboration.
+A powerful AI-driven system to **upload, extract, translate, summarize, and search documents** with ease.  
+Built with **FastAPI** and enhanced by **Gemini Flash 2.0 API** for advanced text intelligence.
 
 ---
 
-## Installation
+## 🚀 Features
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-repo/document-management-system.git
-   cd document-management-system
-   ```
+- 📤 **Document Upload** – Upload and manage PDF & DOCX files.
+- 📝 **Text Extraction** – Extract text using `pdfminer.six` and `python-docx`.
+- 🌍 **Translation** – Translate text into multiple languages with **Gemini Flash 2.0 API**.
+- ✂️ **Summarization** – AI-powered document summarization.
+- 🔍 **Search** – Find documents by title, tags, or uploader.
+- 🔡 **Transliteration** – Convert text into different scripts.
+- 🖼 **Image Extraction** – Extract images from PDF/DOCX.
+- 🔐 **User Authentication** – Registration, login & OTP verification.
+- 📜 **Activity Logs** – Track user actions in the database.
+- 💬 **Comments** – Add comments for collaboration.
+- ❓ **QnA** – Ask questions on document content (AI-powered).
 
-2. Install the required dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+---
+## ⚙️ Tech Stack  
 
-3. Set up the environment variables:
-   ```bash
-   cp .env.example .env
-   ```
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)  
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green?logo=fastapi)  
+![Streamlit](https://img.shields.io/badge/Streamlit-UI-orange?logo=streamlit)  
+![GeminiFlash 2.0](https://img.shields.io/badge/GeminiFlash-API_Powered-purple)  
+![Uvicorn](https://img.shields.io/badge/Uvicorn-ASGI_Server-lightgrey?logo=uvicorn)  
+![GitHub](https://img.shields.io/badge/GitHub-Repository-black?logo=github)  
 
-4. Run the FastAPI server:
-   ```bash
-   uvicorn app_fast_api:app --reload
-   ```
+---
+
+## 📚 Key Libraries  
+
+![pdfminer.six](https://img.shields.io/badge/pdfminer.six-PDF_Parsing-yellow)  
+![python-docx](https://img.shields.io/badge/python--docx-Word_Processing-lightblue)  
+![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-ORM-red?logo=sqlalchemy)  
+![PyJWT](https://img.shields.io/badge/PyJWT-Auth_Tokens-green)  
+![passlib](https://img.shields.io/badge/passlib-Password_Hashing-blue)  
+![requests](https://img.shields.io/badge/requests-HTTP_Requests-black?logo=python)  
+![pydantic](https://img.shields.io/badge/pydantic-Data_Validation-teal)  
 
 
-
-## Usage
-
-Access the API Documentation: Open your browser and navigate to:
-
-Swagger UI: http://127.0.0.1:8000/docs
-ReDoc: http://127.0.0.1:8000/redoc
-
+## 📂 Project Structure
+```
 Document-Management-System/
 ├── utility/
-│   ├── document_upload.py       # Handles document uploads
-│   ├── extract_text.py          # Extracts text from documents
-│   ├── translate_text.py        # Translates text using Gemini API
-│   ├── summarize_text.py        # Summarizes document content
-│   ├── transliteration.py       # Handles transliteration of text
-│   ├── extract_images.py        # Extracts images from documents
-│   ├── search.py                # Implements document search functionality
-│   ├── qna.py                   # Question and Answer functionality
-│   ├── logs.py                  # Manages activity logs
-│   ├── comments.py              # Handles document comments
-│   ├── auth.py                  # User authentication and authorization
+│   ├── document_upload.py     # Handles document uploads
+│   ├── extract_text.py        # Extracts text from documents
+│   ├── translate_text.py      # Translates text via Gemini API
+│   ├── summarize_text.py      # Summarizes document content
+│   ├── transliteration.py     # Text transliteration
+│   ├── extract_images.py      # Extract images from docs
+│   ├── search.py              # Document search
+│   ├── qna.py                 # QnA with Gemini API
+│   ├── logs.py                # Activity logging
+│   ├── comments.py            # Document comments
+│   ├── auth.py                # Authentication & authorization
+│
 ├── helpers/
-│   ├── constants.py             # Application constants
-│   ├── database.py              # Database configuration and models
-├── [app_fast_api.py](http://_vscodecontentref_/1)              # FastAPI application entry point
-├── [app_stream.py](http://_vscodecontentref_/2)                # Streamlit application entry point
-├── [requirements.txt](http://_vscodecontentref_/3)             # Project dependencies
-├── [README.md](http://_vscodecontentref_/4)                    # Project documentation
-└── .env                         # Environment variables
->>>>>>> 37f894c (updated read me file)
+│   ├── constants.py           # Constants
+│   ├── database.py            # DB config & models
+│
+├── app_fast_api.py            # FastAPI backend entry
+├── app_stream.py              # Streamlit frontend entry
+├── requirements.txt           # Dependencies
+├── README.md                  # Documentation
+└── .env                       # Environment variables
+```
+---
+
+## 🪄✨ Summon the Server & Stream!
+**Run FastAPI server**
+-
+uvicorn main:app --reload  
+
+**Run Streamlit app**
+-
+streamlit run streamlit_app.py
+
+---
+
+## 📊 Deliverables
+
+- ✅ FastAPI backend with AI-powered features  
+- ✅ Document summarization & translation with **Gemini Flash 2.0**  
+- ✅ Secure authentication & logging system  
+- ✅ Search & QnA capabilities  
+- ✅ Ready-to-use API & UI demo  
+
+---
+
+## ✨ Future Enhancements  
+
+- 🔍 Advanced semantic search with vector databases (FAISS / Pinecone)  
+- 🌍 Multi-language document support  
+- 📦 Cloud deployment (AWS/GCP/Azure)  
+- 🤖 Fine-tuned summarization models for domain-specific docs  
+- 📊 Enhanced analytics dashboard  
+
+---
+
+## 👤 Author  
+
+**Yashi Gupta**  
+Backend Team Lead | Data & AI Solutions  
+
+🔗 [LinkedIn](#) | [GitHub](#)  
